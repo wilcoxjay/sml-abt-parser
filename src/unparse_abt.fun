@@ -10,12 +10,12 @@ struct
 
   fun extensibleUnparseAbt inner e =
     case out e of
-        ` v => atom (V.toString v)
+        ` v => atom (V.toString' v)
       | v \ e =>
         let
           val vstr =
             if hasFree (e, v) then
-              Variable.toString v
+              Variable.toString' v
             else
               "_"
         in
